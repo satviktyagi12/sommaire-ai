@@ -13,10 +13,19 @@ const fontSans = FontSans({
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });
 
+const ORIGIN_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
+
 export const metadata: Metadata = {
   title: "SOMMAIRE - AI Powered PDF Summarizer",
   description: "Sommaire is an app for summarizing PDF documents",
+
+  metadataBase: new URL(ORIGIN_URL),
+  alternates: {
+    canonical: ORIGIN_URL,
+  },
 };
+
+
 
 export default function RootLayout({
   children,
