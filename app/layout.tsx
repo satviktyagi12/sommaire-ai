@@ -5,6 +5,7 @@ import "./globals.css";
 import Header from "@/components/common/header";
 import Footer from "@/components/common/footer";
 import { ClerkProvider,SignInButton,SignUpButton,SignedIn,SignedOut,UserButton } from "@clerk/nextjs";
+import { ORIGIN_URL } from "@/public/utils/helpers";
 
 
 const fontSans = FontSans({
@@ -12,8 +13,6 @@ const fontSans = FontSans({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700", "800", "900"],
 });
-
-const ORIGIN_URL = process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000";
 
 export const metadata: Metadata = {
   title: "SOMMAIRE - AI Powered PDF Summarizer",
@@ -30,7 +29,7 @@ export const metadata: Metadata = {
 export default function RootLayout({
   children,
 }: Readonly<{
-  children: React.ReactNode;
+  children: any;
 }>) {
   return (
     <ClerkProvider>
