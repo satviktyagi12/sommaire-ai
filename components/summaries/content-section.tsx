@@ -57,9 +57,17 @@ export default function ContentSection({
         if (isEmpty) return null;
 
         if (hasEmoji || isMainPoint) {
-          return <EmojiPoint key={`point-${index}`} point={point} />;
+          return (
+            <div key={`point-${index}`}>
+              <EmojiPoint point={point} />
+            </div>
+          );
         }
-        return <RegularPoint key={`point-${index}`} point={point} />;
+        return (
+          <div key={`point-${index}`}>
+            <RegularPoint point={point} />
+          </div>
+        );
       })}
     </MotionDiv>
   );

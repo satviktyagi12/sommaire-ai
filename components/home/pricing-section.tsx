@@ -119,7 +119,17 @@ export default function PricingSection() {
         </MotionDiv>
         <div className="relative flex justify-center flex-col lg:flex-row items-center lg:items-stretch gap-8">
           {pricingPlans.map((plan) => (
-            <PricingCard key={plan.id} {...plan} />
+            <div key={plan.id}>
+              <PricingCard
+                name={plan.name}
+                price={plan.price}
+                description={plan.description}
+                items={plan.items}
+                id={plan.id}
+                paymentLink={plan.paymentLink}
+                priceId={plan.priceId}
+              />
+            </div>
           ))}
         </div>
       </div>
